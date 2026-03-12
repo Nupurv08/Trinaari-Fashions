@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Trinaari Fashions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body class="admin-panel-body">
+
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="images/tinaarilogo.webp" alt="Trinaari" class="admin-logo">
+            <h2 class="brand-name">TRINAARI</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#" class="nav-link active" onclick="showSection('dashboard')">
+                    <span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('products')">
+                    <span class="icon">👗</span> Manage Products</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('orders')">
+                    <span class="icon">📦</span> Orders</a></li>
+                <li class="logout-item"><a href="index.html" class="nav-link logout-btn">
+                    <span class="icon">🚪</span> Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-top-bar">
+            <div class="welcome-text">
+                <h1>Welcome, <span class="accent-text">Admin</span></h1>
+                <p>Manage your luxury empire here.</p>
+            </div>
+            <div class="admin-profile">
+                <div class="admin-avatar">A</div>
+            </div>
+        </header>
+
+        <section id="dashboard" class="admin-section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Sales</h3>
+                    <p class="stat-value">₹ 4,50,000</p>
+                    <span class="stat-trend">+12% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Orders</h3>
+                    <p class="stat-value">28</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <p class="stat-value">145</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="admin-section">
+            <div class="section-header">
+                <h2>Manage Inventory</h2>
+                <button class="btn-api-primary">+ Add New Product</button>
+            </div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="images/shop_by_categories1.webp" width="40" alt=""></td>
+                        <td>Banarasi Silk Saree</td>
+                        <td>Sarees</td>
+                        <td>₹ 12,500</td>
+                        <td>15</td>
+                        <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="orders" class="admin-section">
+            <h2>Customer Orders</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Product</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#TR-8842</td>
+                        <td>Ayesha Khan</td>
+                        <td>Kundan Necklace Set</td>
+                        <td><span class="status-badge pending">Pending</span></td>
+                        <td>₹ 8,900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

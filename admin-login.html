@@ -26,7 +26,7 @@
                 <p class="admin-tagline">Management Portal</p>
             </div>
 
-            <form action="#" class="admin-form">
+         <form id="adminLoginForm" class="admin-form">
                 <div class="admin-input-group">
                     <input type="text" id="admin-id" placeholder="Administrator ID" required>
                     <span class="input-icon">
@@ -62,6 +62,27 @@
             </div>
         </div>
     </div>
+<script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Page refresh hone se rokne ke liye
 
+        // Inputs ki values nikalna
+        const adminId = document.getElementById('admin-id').value;
+        const adminPass = document.getElementById('admin-pass').value;
+
+        // Static Credentials (Aap ise change kar sakte hain)
+        const correctId = "admin123";
+        const correctPass = "trinaari2026";
+
+        if (adminId === correctId && adminPass === correctPass) {
+            // Success: Admin Panel par redirect karein
+            alert("Access Granted! Redirecting to Dashboard...");
+            window.location.href = "admin-panel.html"; 
+        } else {
+            // Error: Wrong password alert
+            alert("Invalid Administrator ID or Secret Key. Access Denied.");
+        }
+    });
+</script>
 </body>
 </html>
