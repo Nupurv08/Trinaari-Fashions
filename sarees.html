@@ -3,121 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saree Collection | Trinaari Fashions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Exquisite Sarees | Trinaari Fashions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sarees.css">
 </head>
-<body class="product-page">
+<body>
 
- <section class="page-banner">
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo-box">
+            <img src="images/tinaarilogo.webp" alt="Logo" class="brand-logo-img">
+            <div class="logo-text">TRINAARI<span>FASHIONS</span></div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jewelleries.html">Jewellery</a></li>
+            <li><a href="sarees.html" class="active">Sarees</a></li>
+            <li><a href="whats-new.html">New Arrivals</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <a href="user-login.html" class="icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </a>
+            <a href="cart.html" class="icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <div class="badge">0</div>
+            </a>
+        </div>
+    </nav>
+
+    <header class="saree-hero">
+        <span class="hero-tag">Six Yards of Grace</span>
+        <h1>The Saree <span>Edit</span></h1>
+        <p>From Banarasi weaves to modern drapes, find your perfect silhouette.</p>
+    </header>
+
     <div class="container">
-        <span class="hero-tag">Handwoven Heritage</span>
-        <h1>Luxury <span class="accent-text">Saree Collection</span></h1>
-        <p>
-            A curated selection of timeless Indian sarees — woven by artisans,
-            inspired by tradition, and designed for modern elegance.
-        </p>
-    </div>
-</section>
-    <section class="collection-section section-padding">
-        <div class="container">
+        <div class="product-grid">
             
-            <div class="collection-controls">
-                <p class="results-count">Showing 06 Handcrafted Pieces</p>
-                <div class="sort-wrapper">
-                    <select name="sort" id="sort">
-                        <option value="featured">Featured</option>
-                        <option value="newest">New Arrivals</option>
-                        <option value="price-low">Price: Low to High</option>
-                    </select>
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="wish-icon">♡</span>
+                    <img src="images/2slide.webp" alt="Saree Collection">
+                    <div class="quick-view">QUICK VIEW</div>
+                </div>
+                <div class="product-meta">
+                    <p class="category">Silk Collection</p>
+                    <h3>Midnight Banarasi Silk</h3>
+                    <p class="price">₹ 12,500</p>
+                    <button class="add-bag-btn" onclick="added('Banarasi Saree')">ADD TO BAG</button>
                 </div>
             </div>
 
-            <div class="product-grid">
-                
-                <div class="product-card">
-
-    <div class="product-img">
-
-        <img src="images/saree1.webp" alt="Banarasi Silk Saree">
-
-        <div class="wishlist">♡</div>
-
-        <div class="product-overlay">
-            <button class="quick-view">Quick View</button>
-            <button class="add-to-cart-btn">Add To Bag</button>
-        </div>
-
-    </div>
-
-    <div class="product-info">
-        <h3>Banarasi Gold Zari Silk Saree</h3>
-        <p class="price">₹18,500</p>
-        <span class="product-type">Handwoven Banarasi</span>
-    </div>
-
-</div>
-
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/saree3.webp" alt="Organza">
-                        <div class="product-overlay">
-                            <button class="add-to-cart-btn">ADD TO BAG</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Petal Blush Organza</h3>
-                        <p class="price">₹12,400</p>
-                        <a href="#" class="view-details">View Details</a>
-                    </div>
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="wish-icon">♡</span>
+                    <img src="images/slide1.webp" alt="Saree Collection">
                 </div>
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/saree4.webp" alt="Chanderi">
-                        <div class="product-overlay">
-                            <button class="add-to-cart-btn">ADD TO BAG</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Midnight Chanderi</h3>
-                        <p class="price">₹9,800</p>
-                        <a href="#" class="view-details">View Details</a>
-                    </div>
+                <div class="product-meta">
+                    <p class="category">Handloom</p>
+                    <h3>Golden Chanderi Drap</h3>
+                    <p class="price">₹ 8,900</p>
+                    <button class="add-bag-btn" onclick="added('Chanderi Saree')">ADD TO BAG</button>
                 </div>
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/saree5.webp" alt="Paithani">
-                        <div class="product-overlay">
-                            <button class="add-to-cart-btn">ADD TO BAG</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Classic Peacock Paithani</h3>
-                        <p class="price">₹25,000</p>
-                        <a href="#" class="view-details">View Details</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="images/saree6.webp" alt="Patola">
-                        <div class="product-overlay">
-                            <button class="add-to-cart-btn">ADD TO BAG</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Heritage Patola Print</h3>
-                        <p class="price">₹15,600</p>
-                        <a href="#" class="view-details">View Details</a>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
 
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="wish-icon">♡</span>
+                    <img src="images/slide3.webp" alt="Saree Collection">
+                </div>
+                <div class="product-meta">
+                    <p class="category">Party Wear</p>
+                    <h3>Floral Organza Saree</h3>
+                    <p class="price">₹ 6,400</p>
+                    <button class="add-bag-btn" onclick="added('Organza Saree')">ADD TO BAG</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="wish-icon">♡</span>
+                    <img src="images/shop_by_categories1.webp" alt="Saree Collection">
+                </div>
+                <div class="product-meta">
+                    <p class="category">Bridal Edit</p>
+                    <h3>Pure Kanjeevaram Red</h3>
+                    <p class="price">₹ 25,000</p>
+                    <button class="add-bag-btn" onclick="added('Kanjeevaram Saree')">ADD TO BAG</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="wish-icon">♡</span>
+                    <img src="images/shop_by_categories2.webp" alt="Saree Collection">
+                </div>
+                <div class="product-meta">
+                    <p class="category">Casual</p>
+                    <h3>Soft Mulmul Cotton</h3>
+                    <p class="price">₹ 3,200</p>
+                    <button class="add-bag-btn" onclick="added('Cotton Saree')">ADD TO BAG</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="img-box">
+                    <span class="wish-icon">♡</span>
+                    <img src="images/2slide.webp" alt="Saree Collection">
+                </div>
+                <div class="product-meta">
+                    <p class="category">Contemporary</p>
+                    <h3>Shimmer Sequin Saree</h3>
+                    <p class="price">₹ 9,800</p>
+                    <button class="add-bag-btn" onclick="added('Sequin Saree')">ADD TO BAG</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="toast">Added to your bag! ✨</div>
+
+    <script>
+        function added(name) {
+            const toast = document.getElementById('toast');
+            toast.innerText = name + " added to your bag! ✨";
+            toast.style.bottom = "40px";
+            setTimeout(() => { toast.style.bottom = "-100px"; }, 3000);
+        }
+    </script>
 </body>
 </html>

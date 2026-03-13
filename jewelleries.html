@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Jewellery | Trinaari Fashions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Brand Identity --- */
+        :root {
+            --brand-green: #0b3d2e; 
+            --brand-gold: #c5a059;  
+            --bg-cream: #fbf9f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--brand-green);
+
+    background-image: radial-gradient(#e8e3d8 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+        /* --- Luxury Navbar --- */
+        .navbar {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Logo + Text Styling */
+        .nav-logo-box {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+
+        .brand-logo-img {
+            width: 45px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--brand-green);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 4px;
+            font-family: 'Montserrat';
+            color: var(--brand-gold);
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--brand-green);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: var(--brand-gold);
+        }
+
+        /* Icons Group */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .icon-link {
+            text-decoration: none;
+            color: var(--brand-green);
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .icon-link:hover { color: var(--brand-gold); }
+
+        .icon-svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 1.5;
+            stroke: currentColor;
+            fill: none;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--brand-gold);
+            color: white;
+            font-size: 9px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* --- Hero Header --- */
+        .page-title {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+        .page-title::after{
+    content:"";
+    width:80px;
+    height:2px;
+    background:var(--brand-gold);
+    display:block;
+    margin:25px auto 0;
+}
+        .hero-tag {
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: var(--brand-gold);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        h1 span { font-style: italic; color: var(--brand-gold); }
+
+        .subtitle {
+            font-size: 14px;
+            color: #777;
+            margin-top: 15px;
+            font-weight: 300;
+        }
+
+        /* --- Jewellery Grid --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 100px;
+        }
+
+        .jewellery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+    background: var(--white);
+    border: 1px solid #f0f0f0;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    border-radius:4px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+}
+
+        .img-box {
+            position: relative;
+            aspect-ratio: 1/1.2;
+            overflow: hidden;
+            background: #f9f9f9;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.8s ease;
+        }
+         .img-box::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:40%;
+    background:linear-gradient(transparent, rgba(0,0,0,0.25));
+}
+        .card:hover .img-box img { 
+            transform: scale(1.08);
+         }
+
+        .wish-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            border: none;
+            color: var(--brand-green);
+        }
+
+        .meta {
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .meta h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--brand-gold);
+            font-size: 1.1rem;
+        }
+
+        .add-btn {
+    margin-top: 20px;
+    width: 100%;
+    background: var(--brand-green);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background: var(--brand-gold);
+    letter-spacing:3px;
+}
+
+        /* --- Toast Notification --- */
+        #toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--brand-green);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 4px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.5s;
+            z-index: 2000;
+        }
+
+        #toast.show { bottom: 40px; }
+        .meta h3{
+    transition:0.3s;
+}
+
+.card:hover .meta h3{
+    color:var(--brand-gold);
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo-box">
+            <img src="images/tinaarilogo.webp" alt="Logo" class="brand-logo-img">
+            <div class="logo-text">TRINAARI<span>FASHIONS</span></div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jewelleries.html" class="active">Jewellery</a></li>
+            <li><a href="whats-new.html">What's New</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            
+            <a href="user-login.html" class="icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.84-8.84 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </a>
+
+            <a href="cart.html" class="icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <div class="badge">0</div>
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-title">
+        <span class="hero-tag">Handcrafted Elegance</span>
+        <h1>Fine <span>Jewellery</span></h1>
+        <p class="subtitle">Adorn yourself with treasures that tell a story of royalty.</p>
+    </header>
+
+    <div class="container">
+        <div class="jewellery-grid">
+            
+            <div class="card">
+                <div class="img-box">
+                    <button class="wish-overlay" onclick="this.innerText='♥'">♡</button>
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600" alt="">
+                </div>
+                <div class="meta">
+                    <h3>Kundan Choker Set</h3>
+                    <p class="price">₹ 15,200</p>
+                    <button class="add-btn" onclick="showToast('Kundan Choker')">Add to Bag</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <button class="wish-overlay" onclick="this.innerText='♥'">♡</button>
+                    <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600" alt="">
+                </div>
+                <div class="meta">
+                    <h3>Temple Gold Jhumka</h3>
+                    <p class="price">₹ 8,400</p>
+                    <button class="add-btn" onclick="showToast('Temple Jhumka')">Add to Bag</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <button class="wish-overlay" onclick="this.innerText='♥'">♡</button>
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600" alt="">
+                </div>
+                <div class="meta">
+                    <h3>Emerald Royal Ring</h3>
+                    <p class="price">₹ 22,000</p>
+                    <button class="add-btn" onclick="showToast('Emerald Ring')">Add to Bag</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <button class="wish-overlay" onclick="this.innerText='♥'">♡</button>
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600" alt="">
+                </div>
+                <div class="meta">
+                    <h3>Antique Gold Karas</h3>
+                    <p class="price">₹ 35,000</p>
+                    <button class="add-btn" onclick="showToast('Antique Karas')">Add to Bag</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <button class="wish-overlay" onclick="this.innerText='♥'">♡</button>
+                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600" alt="">
+                </div>
+                <div class="meta">
+                    <h3>Polki Choker Set</h3>
+                    <p class="price">₹ 45,900</p>
+                    <button class="add-btn" onclick="showToast('Polki Choker')">Add to Bag</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <button class="wish-overlay" onclick="this.innerText='♥'">♡</button>
+                    <img src="https://images.unsplash.com/photo-1630019017730-9b626cdda687?auto=format&fit=crop&w=600" alt="">
+                </div>
+                <div class="meta">
+                    <h3>Silver Meenakari Set</h3>
+                    <p class="price">₹ 12,500</p>
+                    <button class="add-btn" onclick="showToast('Meenakari Set')">Add to Bag</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="toast">Item added to your royal collection! ✨</div>
+
+    <script>
+        function showToast(name) {
+            const toast = document.getElementById('toast');
+            toast.innerText = name + " added to your royal collection! ✨";
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 3000);
+        }
+    </script>
+
+</body>
+</html>
